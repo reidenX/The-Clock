@@ -29,7 +29,7 @@ const months = [
 //1. While counter is running, switch to clock
 
 const today = new Date();
-let hours = 20;
+let hours = today.getHours();
 let displayedHours = hours;
 hours > 12 && hours < 24 ? (displayedHours -= 12) : hours;
 
