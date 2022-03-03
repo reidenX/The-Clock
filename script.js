@@ -29,17 +29,16 @@ const months = [
 //1. While counter is running, switch to clock
 
 const today = new Date();
-let hours =
-  today.getHours() > 12 && today.getHours() < 24
-    ? today.getHours() -= 12
-    : today.getHours();
+let hours = 20;
+let displayedHours = hours;
+hours > 12 && hours < 24 ? (displayedHours -= 12) : hours;
 
 if (hours >= 24) hours = 0;
 const minutes =
   today.getMinutes() < 10 ? `0${today.getMinutes()}` : today.getMinutes();
 const time = hours >= 12 && hours < 24 ? "pm" : "am"; //<= Adds 0 to minutes if it's less than 10 to keep the 2 digits format
 
-const hoursNow = `${hours}:${minutes} ${time}`;
+const hoursNow = `${displayedHours}:${minutes} ${time}`;
 const dateNow = `Today is: ${
   months[today.getMonth()]
 } ${today.getDate()}, ${today.getFullYear()}`;
