@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javscipt Clock</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&family=Smooch+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="clock">
+        <div class="circleDeco circleDeco1"></div>
+        <div class="circleDeco circleDeco2"></div>
+        <h1>Clock</h1>
+        <h4 class="timeInClock"></h4>
+        <h4 class="counterInClock" data-hide></h4>
+        <div class="switchTypes">
+          <ul>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+          </ul>
+          <button class="clockTypes timeNow" data-active>Clock</button>
+          <button class="clockTypes stopwatch">Stopwatch</button>
+        </div>
+        <div class="controls">
+          <h5 class="date"></h5>
+          <div class="stopWatchButtons" data-hide>
+            <button class="clockControls start">Start</button>
+            <button class="clockControls stop">Stop</button>
+            <button class="clockControls reset">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

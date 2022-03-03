@@ -1,0 +1,198 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --secondaryColor: black;
+  --primaryColor: white;
+
+  --ff-Roboto: "Roboto", sans-serif;
+  --ff-SmoochSans: "Smooch Sans", sans-serif;
+}
+
+body {
+  font-family: var(--ff-SmoochSans);
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background: var(--secondaryColor);
+}
+
+h1,
+h4 {
+  color: var(--primaryColor);
+  grid-column: 1/3;
+  border-bottom: solid 1px var(--primaryColor);
+}
+
+h1 {
+  font-size: 3.5rem;
+  grid-row: 1/2;
+  text-align: center;
+  font-family: var(--ff-Roboto);
+}
+
+h4 {
+  display: grid;
+  font-size: 1.5rem;
+  place-items: center;
+  grid-row: 2/3;
+}
+
+button {
+  width: 65px;
+  height: 30px;
+  background: none;
+  color: var(--primaryColor);
+  font-size: 0.6rem;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: var(--ff-Roboto);
+}
+
+.reset {
+  background: red;
+  outline: solid 1px red;
+  border: none;
+  color: var(--secondaryColor);
+}
+
+.switchTypes,
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.switchTypes {
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+  grid-column: 3/4;
+  grid-row: 1/3;
+  border-left: solid 1px var(--primaryColor);
+  border-bottom: solid 1px var(--primaryColor);
+}
+
+button[data-active] {
+  background: var(--primaryColor);
+  color: var(--secondaryColor);
+}
+
+.controls {
+  justify-content: center;
+  gap: 10px;
+  grid-row: 3/4;
+  grid-column: 1/4;
+}
+
+[data-hide] {
+  display: none;
+}
+
+.date {
+  font-size: 1.5rem;
+  color: var(--primaryColor);
+}
+
+button,
+.clock {
+  border: solid 1px var(--primaryColor);
+}
+
+.clock {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border-radius: 50px;
+  height: 35%;
+  width: min(90vw, 450px);
+}
+
+.displayNone {
+  display: none;
+}
+
+.pointerEventsNone {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.circleDeco,
+ul {
+  position: absolute;
+}
+
+ul {
+  display: flex;
+  gap: 10px;
+  top: 15px;
+}
+
+li {
+  list-style: none;
+}
+
+ul > li > div {
+  background: var(--primaryColor);
+  width: 5px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.circleDeco {
+  border: solid 3px var(--primaryColor);
+  width: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.circleDeco2,
+.circleDeco1 {
+  bottom: 25px;
+}
+
+.circleDeco2 {
+  right: 25px;
+}
+
+.circleDeco1 {
+  left: 25px;
+}
+
+@media (min-width: 422px) {
+  h1 {
+    font-size: 6rem;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+  }
+
+  button {
+    width: 80px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+
+  .clock {
+    height: 40%;
+  }
+
+  .switchTypes {
+    gap: 20px;
+  }
+
+  .controls {
+    justify-content: space-evenly;
+    gap: 0;
+  }
+}
